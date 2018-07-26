@@ -2,22 +2,71 @@
 html, body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    background-color: #333;
+    /* This was challenging for me, in order to get the calculator
+       to vertically align in the center; the reason why the typical 
+       approach didn't work (and the reason why the following line
+       is necessary is that the height of the page) was less than
+       the size of the window, and therefore centering other elements
+       relative to the body would not center them correctly.
+    */
+    height: 100%;
 }
 
-input {
-    height: 50px;
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* CALCULATOR SHAPE, SIZE, POSITION */
+.container {
+    height: 100%;
 }
 
 table {
-    width: 25%;
     margin: 0 auto;
+    padding: 10px;
+    background-color: #222;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 td {
-    height: 50px;
+    height: 70px;
+    width: 70px;
 }
 
+/* INPUT (the number display) */
+input {
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: right;
+    font-size: 36pt;
+    background-color: transparent;
+    color: white;
+    border: 0;
+}
+
+/* BUTTONS */
 button {
+    outline: none;
     width: 100%;
     height: 100%;
+    border-radius: 70px;
+    border-width: 0;
+    background-color: #666;
+    color: #ddd;
+    font-size: 16pt;
+    text-align: center;
+    vertical-align: middle;
+}
+
+button:hover {
+    background-color: #888;
+}
+
+button:active {
+    background-color: #999;
 }
