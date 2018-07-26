@@ -1,0 +1,23 @@
+/* Your styles go here - have fun! */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    height: 50px;
+}
+
+table {
+    width: 25%;
+    margin: 0 auto;
+}
+
+td {
+    height: 50px;
+}
+
+button {
+    width: 100%;
+    height: 100%;
+}
