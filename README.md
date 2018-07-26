@@ -2,7 +2,7 @@
 <table>
   <tr>
     <th>Lecture</th>
-    <td>Day 3 Lecture 2: <a href="">Introduction to JavaScript, Part 2</a></td>
+    <td>Day 3 Lecture 2: <a href="https://go.meet.sh/intro-js-2">Introduction to JavaScript, Part 2</a></td>
   </tr>
   <tr>
     <th>Description</th>
