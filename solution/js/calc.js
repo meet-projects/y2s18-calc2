@@ -1,14 +1,4 @@
 /* START OF STARTER CODE: You should not need to modify these functions. */
-function exponent(base, power) {
-  var ans = 1;
-
-  for (var i = 0; i < power; i++) {
-    ans *= base;
-  }
-
-  return ans;
-}
-
 function calculate(operation, value1, value2) {
   switch (operation) {
     case '+':
@@ -29,31 +19,11 @@ function calculate(operation, value1, value2) {
       return value1 % value2;
 
     case '^':
-      return exponent(value1, value2);
+      return Math.pow(value1, value2);
     
     default:
       return false;
-  }
-}
-
-function add(a, b) {
-  return a + b;
-}
-
-function sub(a, b) {
-  return a - b;
-}
-
-function mult(a, b) {
-  return a * b;
-}
-
-function div(a, b) {
-  return a / b;
-}
-
-function mod(a, b) {
-  return a % b;
+  }  
 }
 /* END OF STARTER CODE */
 
@@ -67,6 +37,7 @@ var hasDecimalBeenPressed = false;
 
 function updateDisplay(value) {
   var valueString = value.toString();
+
   // Display the value.
   document.getElementById("result").value = valueString;
 }
@@ -113,12 +84,6 @@ function setOperation(op) {
     return;
   }
 
-  var validOps = ['+', '-', '*', '/', '%', '^'];
-
-  if (validOps.indexOf(op) < 0) {
-    return;
-  }
-
   curOperation = op;
 }
 
@@ -128,10 +93,12 @@ function compute() {
   }
 
   result = calculate(curOperation, curValue1, curValue2)
-  curValue1 = 0;
-  curValue2 = false;
-  curOperation = false;
-  updateDisplay(result);
+  if (result !== false) {
+    curValue1 = 0;
+    curValue2 = false;
+    curOperation = false;
+    updateDisplay(result);
+  }
 }
 
 function flipSign() {
