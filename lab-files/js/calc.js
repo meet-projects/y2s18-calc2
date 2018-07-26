@@ -1,14 +1,4 @@
 /* START OF STARTER CODE: You should not need to modify these functions. */
-function exponent(base, power) {
-  var ans = 1;
-
-  for (var i = 0; i < power; i++) {
-    ans *= base;
-  }
-
-  return ans;
-}
-
 function calculate(operation, value1, value2) {
   switch (operation) {
     case '+':
@@ -29,7 +19,7 @@ function calculate(operation, value1, value2) {
       return value1 % value2;
 
     case '^':
-      return exponent(value1, value2);
+      return Math.pow(value1, value2);
     
     default:
       return false;
