@@ -10,7 +10,30 @@ function exponent(base, power) {
 }
 
 function calculate(operation, value1, value2) {
-  return operation(value1, value2);
+  switch (operation) {
+    case '+':
+      return value1 + value2;
+      // Notice that we don't have break statements because
+      // return will already break for us.
+
+    case '-':
+      return value1 - value2;
+
+    case '*':
+      return value1 * value2;
+
+    case '/':
+      return value1 / value2;
+
+    case '%':
+      return value1 % value2;
+
+    case '^':
+      return exponent(value1, value2);
+    
+    default:
+      return false;
+  }
 }
 
 function add(a, b) {
@@ -40,7 +63,6 @@ var curValue1 = 0;
 var curValue2 = false;
 var decimalPlace = 0;
 var curOperation = false;
-var curOperationFunction = false;
 var hasDecimalBeenPressed = false;
 
 function updateDisplay(value) {
@@ -91,22 +113,13 @@ function setOperation(op) {
     return;
   }
 
-  var validOps = {
-    "+": add,
-    "-": sub,
-    "*": mult,
-    "/": div,
-    "%": mod,
-    "^": exponent
-  };
+  var validOps = ['+', '-', '*', '/', '%', '^'];
 
-  if (!(op in validOps)) {
-    console.log('bad')
+  if (validOps.indexOf(op) < 0) {
     return;
   }
 
   curOperation = op;
-  curOperationFunction = validOps[op];
 }
 
 function compute() {
@@ -114,7 +127,7 @@ function compute() {
     return;
   }
 
-  result = calculate(curOperationFunction, curValue1, curValue2)
+  result = calculate(curOperation, curValue1, curValue2)
   curValue1 = 0;
   curValue2 = false;
   curOperation = false;
