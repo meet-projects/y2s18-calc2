@@ -13,6 +13,9 @@
 ## 0 &ensp; Notes about the Starter Code
 1. We have copied the functions (`exponent`, `calculate`) you have already written from lab `calc1` into `calc.js` as starter code; you should not need to modify these functions to complete this lab.
 2. We have added one style into the CSS for you. Feel free to edit any and all styles in `calc.css` as you see fit.
-3. If you have any questions, please ask!
+3. Comments marked with `TODO:` are **some (not all)** of the tasks that you should complete in order to finish the lab.
+4. If you have any questions, please ask!
 
-##
+## 1 &ensp; Incorporating CSS and JS
+1. 
+2. 
