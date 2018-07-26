@@ -44,12 +44,7 @@ var curOperationFunction = false;
 var hasDecimalBeenPressed = false;
 
 function updateDisplay(value) {
-  // var valueString = value.toPrecision(10);
   var valueString = value.toString();
-  var numDigitsOneEm = 30;
-  // Update the fontsize to fit exactly the number of digits.
-  document.getElementById("result").style.fontSize = Math.min(3.5, numDigitsOneEm / valueString.length - 0.3) + "em";
-
   // Display the value.
   document.getElementById("result").value = valueString;
 }
